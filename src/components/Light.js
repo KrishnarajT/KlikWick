@@ -1,0 +1,1 @@
+// Component to test the reaction time of the user to a light stimulus by changing screen colors from red to greeen.

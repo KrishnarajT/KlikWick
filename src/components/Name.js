@@ -1,0 +1,1 @@
+// component to first ask for users name, and save it to localstorage of the browser. 

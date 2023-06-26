@@ -1,0 +1,1 @@
+// A new tab kinda thing that shows the scores of the players, and the average and high scores. 
