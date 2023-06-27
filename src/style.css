@@ -1280,6 +1280,10 @@ input[type="range"]::-ms-fill-lower {
   margin-bottom: 0px;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .ml-0 {
   margin-left: 0px;
 }
@@ -1330,34 +1334,6 @@ input[type="range"]::-ms-fill-lower {
 
 .mt-px {
   margin-top: 1px;
-}
-
-.-ml-2 {
-  margin-left: -0.5rem;
-}
-
-.-ml-2\.5 {
-  margin-left: -0.625rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .box-border {
@@ -1422,6 +1398,10 @@ input[type="range"]::-ms-fill-lower {
 
 .h-2\.5 {
   height: 0.625rem;
+}
+
+.h-28 {
+  height: 7rem;
 }
 
 .h-3 {
@@ -1589,6 +1569,10 @@ input[type="range"]::-ms-fill-lower {
   width: 2.25rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-\[110px\] {
   width: 110px;
 }
@@ -1612,10 +1596,6 @@ input[type="range"]::-ms-fill-lower {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .min-w-\[100vw\] {
@@ -1692,10 +1672,6 @@ input[type="range"]::-ms-fill-lower {
 
 .max-w-screen-2xl {
   max-width: 1320px;
-}
-
-.max-w-screen-lg {
-  max-width: 960px;
 }
 
 .flex-none {
@@ -1897,10 +1873,6 @@ input[type="range"]::-ms-fill-lower {
   gap: 1rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .divide-x > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -2005,6 +1977,10 @@ input[type="range"]::-ms-fill-lower {
 .divide-yellow-600 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(159 88 10 / var(--tw-divide-opacity));
+}
+
+.self-center {
+  align-self: center;
 }
 
 .justify-self-end {
@@ -2968,6 +2944,10 @@ input[type="range"]::-ms-fill-lower {
   text-align: start;
 }
 
+.align-top {
+  vertical-align: top;
+}
+
 .align-middle {
   vertical-align: middle;
 }
@@ -3046,6 +3026,10 @@ input[type="range"]::-ms-fill-lower {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .\!leading-tight {
@@ -3802,6 +3786,26 @@ input[type="range"]::-ms-fill-lower {
   --secondary: #cad5caff;
 }
 
+.primarycolor{
+  background-color: var(--primary-color);
+}
+
+.secondarycolor{
+  background-color: var(--secondary);
+}
+
+.accentcolor{
+  background-color: var(--accent-color);
+}
+
+.backgroundcolor{
+  background-color: var(--background-color);
+}
+
+.darkcolor{
+  background-color: var(--dark);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -3821,6 +3825,10 @@ code {
 .rocher {
   font-family: "Rocher";
   src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+.wellfleet {
+  font-family: "Wellfleet";
 }
 
 .before\:pointer-events-none::before {
@@ -4885,21 +4893,6 @@ code {
 .hover\:text-light-blue-500:hover {
   --tw-text-opacity: 1;
   color: rgb(3 169 244 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(63 131 248 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
-}
-
-.hover\:text-green-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(132 225 188 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-75:hover {
@@ -6257,12 +6250,6 @@ code {
 .peer:disabled:placeholder-shown ~ .peer-disabled\:peer-placeholder-shown\:text-blue-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(96 125 139 / var(--tw-text-opacity));
-}
-
-@media (min-width: 540px) {
-  .sm\:w-96 {
-    width: 24rem;
-  }
 }
 
 @media (min-width: 720px) {
