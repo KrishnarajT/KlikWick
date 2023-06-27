@@ -30,15 +30,15 @@ const Light = () => {
 			timer.innerHTML = "Click!";
 		}, time_to_wait);
 
-		// add event listener to the playground
-		playground.addEventListener("click", () => {
+		const event_handle = () => {
 			// get the end time
 			let end = new Date().getTime();
 			// calculate the time taken
-			let timeTaken = (end - start);
+			let timeTaken = end - start;
 			if (timeTaken < time_to_wait) {
 				timer.innerHTML = "Too Early!";
-				clearTimeout(timeout)
+				playground.removeEventListener("click", event_handle);
+				clearTimeout(timeout);
 				return;
 			}
 
@@ -52,10 +52,11 @@ const Light = () => {
 			playground.classList.remove("bg-green-500");
 			playground.classList.add("bg-red-500");
 			// remove the event listener
-			playground.removeEventListener("click", () => { });
-		});
+			playground.removeEventListener("click", event_handle);
+		};
+		// add event listener to the playground
+		playground.addEventListener("click", event_handle);
 	};
-
 
 	const handleSave = () => {
 		// get the score from localstorage
@@ -105,7 +106,9 @@ const Light = () => {
 				<h1
 					className="product-sans text-9xl font-light text-red-200"
 					id="timer"
-				>Go!</h1>
+				>
+					Go!
+				</h1>
 			</div>
 			<div className=" flex justify-center gap-28 p-8 align-middle">
 				<Button
