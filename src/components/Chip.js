@@ -30,7 +30,7 @@ export default function NameChip() {
 			
 			className="max-w-fit rounded-full px-3.5 py-1.5 accentcolor"
 			onClick={() => {
-				navigate(`/profile:${name}`);
+				navigate(`/profile/:${name}`);
 			}}
 		/>
 	);

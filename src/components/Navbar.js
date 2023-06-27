@@ -70,7 +70,9 @@ export default function Example() {
 						href="#"
 						className="product-sans mr-4 cursor-pointer py-1.5 text-2xl font-semibold leading-none"
 					>
+						<Link to={'/game'}>
 						KlikWick By KPT
+						</Link>
 					</Typography>
 					<div className="product-sans flex items-center gap-4">
 						<div className="product-sans mr-4 hidden lg:block">
