@@ -1,17 +1,13 @@
 import {
 	Card,
 	CardBody,
-	CardFooter,
 	Typography,
-	Button,
 } from "@material-tailwind/react";
 import {
-	RocketLaunchIcon,
 	SunIcon as SunIconSolid,
 	SpeakerWaveIcon as SpeakerWaveIconSolid,
 } from "@heroicons/react/24/solid";
 import {
-	ArrowLongRightIcon,
 	SunIcon as SunIconOutline,
 	SpeakerWaveIcon as SpeakerWaveIconOutline,
 } from "@heroicons/react/24/outline";

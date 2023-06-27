@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function Name() {
 	let navigate = useNavigate();
+	// localStorage.clear()
 
 	// save to localstorage
 	const handleName = () => {
@@ -20,7 +21,7 @@ export default function Name() {
 		let id = uuidv4();
 
 		let userdata = JSON.parse(localStorage.getItem("userdata"));
-
+		console.log(userdata);
 		// some data exists, then you gotta check if the name is the same
 		if (userdata) {
 			for (let i = 0; i < userdata.length; i++) {
@@ -36,14 +37,16 @@ export default function Name() {
 			});
 			localStorage.setItem("userdata", JSON.stringify(userdata));
 		} else {
-			const data = {
-				id: id,
-				name: name,
-				score: {
-					light: 0,
-					sound: 0,
+			const data = [
+				{
+					id: id,
+					name: name,
+					score: {
+						light: 0,
+						sound: 0,
+					},
 				},
-			};
+			];
 			localStorage.setItem("userdata", JSON.stringify(data));
 		}
 

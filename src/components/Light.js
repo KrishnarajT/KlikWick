@@ -20,7 +20,7 @@ const Light = () => {
 				</div>
 			</div>
 			<div
-				className="flex h-2/4 flex-col items-center justify-center bg-red-500"
+				className="flex h-2/4 flex-col items-center justify-center bg-red-500 hover:cursor-pointer"
 				id="playground"
 			>
 				{/* Score in Ms */}
@@ -43,7 +43,7 @@ const Light = () => {
 					size="lg"
 					className="scale-110 transform bg-green-400 transition duration-500 ease-in-out hover:scale-125 hover:shadow-xl"
 				>
-					Play Again
+					Play
 				</Button>
 			</div>
 		</div>
