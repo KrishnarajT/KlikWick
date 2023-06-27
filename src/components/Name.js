@@ -52,7 +52,7 @@ export default function Name() {
 
 		localStorage.setItem(
 			"currentuser",
-			JSON.stringify({ id: id, name: name })
+			JSON.stringify({ id: id, name: name, score: { light: 0, sound: 0 } })
 		);
 		navigate("/game");
 	};
