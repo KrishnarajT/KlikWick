@@ -16,7 +16,18 @@ const Statistics = () => {
 			sound: user.score.sound,
 		};
 	});
+
 	console.log(spread_data);
+
+	// // replace all 0s with NaNs
+	// for (let i = 0; i < spread_data.length; i++) {
+	// 	if (spread_data[i].light === 0) {
+	// 		spread_data[i].light = NaN;
+	// 	}
+	// 	if (spread_data[i].sound === 0) {
+	// 		spread_data[i].sound = NaN;
+	// 	}
+	// }
 
 	// get average score
 	const average_score = spread_data.reduce((acc, curr) => {
@@ -136,12 +147,8 @@ const Statistics = () => {
 	// get percentile score
 	const percentile_score = {
 		id: "percentile",
-		light: 
-			spread_data[Math.floor(spread_data.length * 0.9)].light
-		,
-		sound: 
-			spread_data[Math.floor(spread_data.length * 0.9)].sound,
-		
+		light: spread_data[Math.floor(spread_data.length * 0.9)].light,
+		sound: spread_data[Math.floor(spread_data.length * 0.9)].sound,
 	};
 	console.log(percentile_score);
 
@@ -251,19 +258,24 @@ const Statistics = () => {
 
 	// get name of the person with the lowest light score
 	const lowest_light_score = spread_data.reduce((prev, curr) => {
-		if (curr.light !== 0) {
-			return prev.light < curr.light ? prev : curr;
+		if (curr.light !== 0 && (prev.light === 0 || curr.light < prev.light)) {
+			return curr;
 		} else {
 			return prev;
 		}
 	});
+
 	const lowest_light_score_name = lowest_light_score.name;
 	console.log(lowest_light_score);
 
 	// get name of the person with the lowest sound score
-	const lowest_sound_score = spread_data.reduce((prev, curr) =>
-		prev.sound < curr.sound ? prev : curr
-	);
+	const lowest_sound_score = spread_data.reduce((prev, curr) => {
+		if (curr.sound !== 0 && (prev.sound === 0 || curr.sound < prev.sound)) {
+			return curr;
+		} else {
+			return prev;
+		}
+	});
 	const lowest_sound_score_name = lowest_sound_score.name;
 
 	// get name of the person with the worst light score

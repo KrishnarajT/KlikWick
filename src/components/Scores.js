@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import Table from "./Table";
 const Scores = () => {
 	return (
-		<div>
+		<div className="h-screen">
 			<Navbar />
 			<div className="m-4 flex flex-col justify-center gap-5 self-center p-4 text-center">
 				<h1 className="product-sans text-darkcolor text-6xl font-light">

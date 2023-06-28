@@ -3,9 +3,8 @@ import {
 	CardHeader,
 	CardBody,
 	Typography,
-	Avatar,
 } from "@material-tailwind/react";
-import { StarIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 import "remixicon/fonts/remixicon.css";
 
 export default function Example(props) {

@@ -1,8 +1,7 @@
-import { Route, Routes, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Name from "./components/Name";
 import Game from "./components/Game";
 import React, { Component } from "react";
-import ProfilePage from "./components/ProfilePage";
 import Scores from "./components/Scores";
 import Light from "./components/Light";
 import Sound from "./components/Sound";
@@ -15,8 +14,6 @@ class App extends Component {
 				<Routes>
 					<Route path="/" element={<Name />} />
 					<Route path="/game" element={<Game />} />
-					<Route path="/profile/:name" element={<ProfilePage />} />
-					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/scores" element={<Scores />} />
 					<Route path="/light" element={<Light />} />
 					<Route path="/sound" element={<Sound />} />

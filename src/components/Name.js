@@ -5,7 +5,6 @@ import {
 	CardFooter,
 	Typography,
 	Input,
-	Checkbox,
 	Button,
 } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
@@ -24,9 +23,26 @@ export default function Name() {
 		console.log(userdata);
 		// some data exists, then you gotta check if the name is the same
 		if (userdata) {
+			// remove all users where the score for light and sound is both 0
+			userdata = userdata.filter((user) => {
+				return user.score.light !== 0 || user.score.sound !== 0;
+			});
+			localStorage.setItem("userdata", JSON.stringify(userdata));
+
 			for (let i = 0; i < userdata.length; i++) {
 				if (userdata[i].name === name) {
 					alert("Name already exists!");
+					// save to current user
+					localStorage.setItem(
+						"currentuser",
+						JSON.stringify({
+							id: userdata[i].id,
+							name: userdata[i].name,
+							score: userdata[i].score,
+						})
+					);
+
+					navigate("/game");
 					return;
 				}
 			}
@@ -52,7 +68,11 @@ export default function Name() {
 
 		localStorage.setItem(
 			"currentuser",
-			JSON.stringify({ id: id, name: name, score: { light: 0, sound: 0 } })
+			JSON.stringify({
+				id: id,
+				name: name,
+				score: { light: 0, sound: 0 },
+			})
 		);
 		navigate("/game");
 	};

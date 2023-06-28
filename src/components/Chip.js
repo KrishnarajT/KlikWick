@@ -1,10 +1,7 @@
 import { Chip, Avatar, Typography } from "@material-tailwind/react";
 import React from "react";
-import { json } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export default function NameChip() {
-	let navigate = useNavigate();
 	const userdata = localStorage.getItem("currentuser");
 	let name = userdata ? JSON.parse(userdata).name : "Guest";
 	return (
@@ -29,9 +26,6 @@ export default function NameChip() {
 			}
 			
 			className="max-w-fit rounded-full px-3.5 py-1.5 accentcolor"
-			onClick={() => {
-				navigate(`/profile/:${name}`);
-			}}
 		/>
 	);
 }
