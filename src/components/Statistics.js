@@ -136,20 +136,12 @@ const Statistics = () => {
 	// get percentile score
 	const percentile_score = {
 		id: "percentile",
-		light: [
-			spread_data[Math.floor(spread_data.length * 0.1)].light,
-			spread_data[Math.floor(spread_data.length * 0.25)].light,
-			spread_data[Math.floor(spread_data.length * 0.5)].light,
-			spread_data[Math.floor(spread_data.length * 0.75)].light,
-			spread_data[Math.floor(spread_data.length * 0.9)].light,
-		],
-		sound: [
-			spread_data[Math.floor(spread_data.length * 0.1)].sound,
-			spread_data[Math.floor(spread_data.length * 0.25)].sound,
-			spread_data[Math.floor(spread_data.length * 0.5)].sound,
-			spread_data[Math.floor(spread_data.length * 0.75)].sound,
+		light: 
+			spread_data[Math.floor(spread_data.length * 0.9)].light
+		,
+		sound: 
 			spread_data[Math.floor(spread_data.length * 0.9)].sound,
-		],
+		
 	};
 	console.log(percentile_score);
 
@@ -286,19 +278,94 @@ const Statistics = () => {
 	);
 	const worst_sound_score_name = worst_sound_score.name;
 
-    // create props for stat group - array of 3 dictionaries. 
-    // [
-    //     {
-    //         title: 
-    //         value:
-    //         desc:
-    //     }
-    // ]
+	// create props for stat group - array of 3 dictionaries.
+	// [
+	//     {
+	//         title:
+	//         value:
+	//         desc:
+	//     }
+	// ]
 
-    // mean median and mode
-    conventional = [
-    ]
+	// mean median and mode
+	const conventional = [
+		{
+			title: "Mean",
+			value: average_score,
+			desc: "The average score of all the performers",
+		},
+		{
+			title: "Median",
+			value: median_score,
+			desc: "The middle score of all the performers",
+		},
+		{
+			title: "Mode",
+			value: {
+				light: mode_light,
+				sound: mode_sound,
+			},
+			desc: "The most common score of all the performers",
+		},
+	];
 
+	// deviations
+	const deviations = [
+		{
+			title: "Standard Deviation",
+			value: standard_deviation,
+			desc: "The average distance of all the scores from the mean",
+		},
+		{
+			title: "Variance",
+			value: variance_score,
+			desc: "The average squared distance of all the scores from the mean",
+		},
+		{
+			title: "Coefficient of Variation",
+			value: coefficient_of_variation_score,
+			desc: "The difference between the highest and lowest score",
+		},
+	];
+
+	// quartiles and percentiles
+	const quartiles_and_percentiles = [
+		{
+			title: "Range",
+			value: range_score,
+			desc: "The difference between the highest and lowest score",
+		},
+		{
+			title: "Quartiles",
+			value: interquartile_range_score,
+			desc: "The range between the first and third quartiles of the data",
+		},
+		{
+			title: "90th Percentile",
+			value: percentile_score,
+			desc: "The percentage of scores that fall below a given value in the data",
+		},
+	];
+
+	// z-score, skewness and kurtosis
+	const z_score_skewness_kurtosis = [
+		{
+			title: "Z-Score",
+			value: z_score_score,
+			desc: "The number of standard deviations a score is from the mean of the data",
+		},
+		{
+			title: "Skewness",
+			value: skewness_score,
+			desc: "A measure of the asymmetry of the data distribution",
+		},
+		{
+			title: "Kurtosis",
+			value: kurtosis_score,
+			desc: "A measure of the 'peakedness' of the data distribution",
+		},
+	];
+	console.log(conventional);
 
 	return (
 		<div>
@@ -343,22 +410,26 @@ const Statistics = () => {
 
 			{/* Showing the stats */}
 			<div className="flex  flex-col flex-wrap items-center justify-center gap-16 p-4 align-middle">
-				<h1 className="product-sans text-primarycolor text-3xl font-light">
+				<h1 className="product-sans text-darkcolor text-3xl font-light">
 					Conventional Stuff
 				</h1>
-				<StatGroup />
-				{/* <h1 className="product-sans text-primarycolor text-3xl font-light">
-                    Deviation and Consistancy
+				<StatGroup data={conventional} what_data="light" />
+				<StatGroup data={conventional} what_data="sound" />
+				<h1 className="product-sans text-darkcolor text-3xl font-light">
+					Deviation and Consistancy
 				</h1>
-				<StatGroup />
-				<h1 className="product-sans text-primarycolor text-3xl font-light">
-                    Quartiles and Percentile
+				<StatGroup data={deviations} what_data="light" />
+				<StatGroup data={deviations} what_data="sound" />
+				<h1 className="product-sans text-darkcolor text-3xl font-light">
+					Quartiles and Percentile
 				</h1>
-				<StatGroup />
-				<h1 className="product-sans text-primarycolor text-3xl font-light">
+				<StatGroup data={quartiles_and_percentiles} what_data="light" />
+				<StatGroup data={quartiles_and_percentiles} what_data="sound" />
+				<h1 className="product-sans text-darkcolor text-3xl font-light">
 					Skewness and Kurtosis
 				</h1>
-				<StatGroup /> */}
+				<StatGroup data={z_score_skewness_kurtosis} what_data="light" />
+				<StatGroup data={z_score_skewness_kurtosis} what_data="sound" />
 			</div>
 		</div>
 	);

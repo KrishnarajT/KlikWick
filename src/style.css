@@ -3775,6 +3775,24 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-1\/6 {
+  height: 16.666667%;
+}
+
+.h-1\/4 {
+  height: 25%;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -3837,6 +3855,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-2\/5 {
@@ -3920,8 +3942,12 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-2\/6 {
+  width: 33.333333%;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .min-w-\[100vw\] {
@@ -4009,6 +4035,10 @@ details.collapse summary::-webkit-details-marker {
 
 .max-w-screen-2xl {
   max-width: 1320px;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .flex-none {
@@ -4400,6 +4430,10 @@ details.collapse summary::-webkit-details-marker {
   overflow: hidden;
 }
 
+.overflow-clip {
+  overflow: clip;
+}
+
 .overflow-scroll {
   overflow: scroll;
 }
@@ -4420,6 +4454,11 @@ details.collapse summary::-webkit-details-marker {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .break-words {
@@ -4978,6 +5017,26 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(194 120 3 / 0.2);
 }
 
+.bg-deep-orange-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 138 101 / var(--tw-bg-opacity));
+}
+
+.bg-deep-orange-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 233 231 / var(--tw-bg-opacity));
+}
+
+.bg-red-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 242 242 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 239 254 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -5453,6 +5512,11 @@ details.collapse summary::-webkit-details-marker {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {

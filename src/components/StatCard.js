@@ -16,7 +16,7 @@ export default function Example(props) {
 	return (
 		<Card
 			shadow={false}
-			className="mt-6 w-4/12 transform bg-red-100 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl product-sans"
+			className="mt-6 w-4/12 transform bg-red-100 shadow-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl product-sans h-1/4"
 		>
 			<CardHeader
 				color="transparent"
@@ -43,7 +43,7 @@ export default function Example(props) {
 				</svg> */}
 				<div className="flex w-full flex-col gap-0.5">
 					<div className="flex items-center justify-between">
-						<Typography variant="h5" color="blue-gray" className="product-sans text-3xl">
+						<Typography variant="h5" color="blue-gray" className="product-sans text-3xl text-center">
 							{name}
 						</Typography>
 						{/* <div className="5 flex items-center gap-0">
