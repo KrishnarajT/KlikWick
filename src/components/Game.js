@@ -19,6 +19,7 @@ const Game = () => {
 				<SelectionCard props={{ type: "light" }} />
 				<SelectionCard props={{ type: "sound" }} />
 			</div>
+
 		</div>
 	);
 };

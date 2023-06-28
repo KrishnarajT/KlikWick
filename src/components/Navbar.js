@@ -26,6 +26,18 @@ export default function Example() {
 				as="li"
 				variant="small"
 				color="blue-gray"
+				className="product-sans transform p-1 text-xl font-semibold transition-all duration-500 ease-in-out hover:scale-105 hover:text-blue-600"
+			>
+				<Link to="/game">
+					<a href="#" className="product-sans flex items-center">
+						Home
+					</a>
+				</Link>
+			</Typography>
+			<Typography
+				as="li"
+				variant="small"
+				color="blue-gray"
 				className="product-sans transform p-1 text-xl transition-all duration-500 ease-in-out hover:scale-105 hover:text-blue-600"
 			>
 				<Link to="/scores">
@@ -46,6 +58,7 @@ export default function Example() {
 					</a>
 				</Link>
 			</Typography>
+
 			<Typography
 				as="li"
 				variant="small"
