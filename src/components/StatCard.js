@@ -8,7 +8,11 @@ import {
 import { StarIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import "remixicon/fonts/remixicon.css";
 
-export default function Example() {
+export default function Example(props) {
+
+    const { title, name, score } = props;
+    console.log(title, name, score)
+
 	return (
 		<Card
 			shadow={false}
@@ -18,14 +22,14 @@ export default function Example() {
 				color="transparent"
 				floated={false}
 				shadow={false}
-				className="mx-4 flex items-center gap-4 pb-8 pt-0"
+				className="mx-4 flex flex-col items-center gap-4 pb-8 pt-0 align-middle justify-center text-center self-center"
 			>
-				{/* <UserCircleIcon className="text-accentcolor h-16" /> */}
-				<svg
+				<UserCircleIcon className="text-accentcolor h-16" />
+				{/* <svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-user"
-					width="44"
-					height="44"
+					width="50"
+					height="50"
 					viewBox="0 0 24 24"
 					stroke-width="1.5"
 					stroke="#009988"
@@ -36,27 +40,28 @@ export default function Example() {
 					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 					<path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
 					<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-				</svg>
+				</svg> */}
 				<div className="flex w-full flex-col gap-0.5">
 					<div className="flex items-center justify-between">
-						<Typography variant="h5" color="blue-gray product-sans">
-							Candice Wu
+						<Typography variant="h5" color="blue-gray" className="product-sans text-3xl">
+							{name}
 						</Typography>
-						<div className="5 flex items-center gap-0">
+						{/* <div className="5 flex items-center gap-0">
 							<StarIcon className="h-5 w-5 text-yellow-700" />
-						</div>
+						</div> */}
 					</div>
-					<Typography color="blue-gray product-sans">
+					{/* <Typography color="blue-gray product-sans">
 						Frontend Lead @ Google
-					</Typography>
+					</Typography> */}
 				</div>
 			</CardHeader>
-			<CardBody className="mb-6 p-4 product-sans">
-				<Typography className="product-sans text-2xl">
-					&quot;I found solution to all my design needs from Creative
-					Tim. I use them as a freelancer in my hobby projects for
-					fun! And its really affordable, very humble guys !!!&quot;
-				</Typography>
+			<CardBody className="mb-6 p-4 product-sans flex flex-col gap-5 items-center justify-center align-middle">
+				<Typography className="product-sans text-4xl text-accentcolor">
+                    {title}
+                </Typography>
+				<Typography className="product-sans text-3xl">
+                    {score}
+                </Typography>
 			</CardBody>
 		</Card>
 	);

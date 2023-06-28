@@ -8,8 +8,11 @@ module.exports = withMT({
 		"./src/*/*.{html,js, jsx, ts, tsx, md, mdx}",
 		"./src/components/*.{html,js, jsx, ts, tsx, md, mdx}",
 	],
+	daisyui: {
+		themes: ["cupcake", "pastel"],
+	},
 	theme: {
 		extend: {},
 	},
-	plugins: [require("flowbite/plugin")],
+	plugins: [require("flowbite/plugin"), require("daisyui")],
 });
